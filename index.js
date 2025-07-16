@@ -1,8 +1,8 @@
 const express = require("express");
-const userRoutes = require("./routes/user.route");
-const postRoute = require("./routes/post.route");
-const KycRoute = require("./routes/kyc.route");
-const bookRoute = require("./routes/book.route");
+// const userRoutes = require("./routes/user.route");
+// const postRoute = require("./routes/post.route");
+// const KycRoute = require("./routes/kyc.route");
+// const bookRoute = require("./routes/book.route");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
@@ -22,10 +22,14 @@ const Port = process.env.PORT || 5000;
 app.use(cookieParser());
 // connect the mongoose below here
 // creating endpoints for the student database manipulation
-app.use(userRoutes);
-app.use(postRoute);
-app.use(KycRoute);
-app.use(bookRoute);
+// app.use(userRoutes);
+// app.use(postRoute);
+// app.use(KycRoute);
+// app.use(bookRoute);
+
+app.get("/", (req, res) => {
+  return res.send("app is running");
+});
 
 app.use((error, req, res, next) => {
   return res
