@@ -3,17 +3,17 @@ const express = require("express");
 // const postRoute = require("./routes/post.route");
 // const KycRoute = require("./routes/kyc.route");
 // const bookRoute = require("./routes/book.route");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 dotenv.config();
 const app = express();
 
 // create connection
-mongoose
-  .connect(process.env.MONGO_URL)
-  .then(() => console.log("connection was successful"))
-  .catch((error) => console.log(error.message));
+// mongoose
+//   .connect(process.env.MONGO_URL)
+//   .then(() => console.log("connection was successful"))
+//   .catch((error) => console.log(error.message));
 
 app.use(express.json());
 
