@@ -27,10 +27,6 @@ app.use(postRoute);
 app.use(KycRoute);
 app.use(bookRoute);
 
-app.get("/", (req, res) => {
-  return res.send("app is running");
-});
-
 app.use((error, req, res, next) => {
   return res
     .status(error.status || 501)
