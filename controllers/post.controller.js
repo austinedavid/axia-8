@@ -7,7 +7,7 @@ const fs = require("fs/promises");
 const createPost = async (req, res) => {
   const body = req.body;
   const file = req.files;
-  const id = req.user;
+  const { id } = req.user;
   try {
     // upload to cloudinary first
     const previewPixResponse = await cloudinary.uploader.upload(
