@@ -13,7 +13,8 @@ const app = express();
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("connection was successful"))
-  .catch((error) => console.log(error));
+  .catch((error) => console.log(error.message));
+
 app.use(express.json());
 
 const Port = process.env.PORT || 5000;
